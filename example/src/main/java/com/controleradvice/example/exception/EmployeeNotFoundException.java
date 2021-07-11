@@ -1,8 +1,10 @@
 package com.controleradvice.example.exception;
 
+import com.controleradvice.example.exceptionmodel.UserNotFound;
+
 public class EmployeeNotFoundException extends RuntimeException{
 
-    public EmployeeNotFoundException(long id){
-        super(String.format("Employe with %d not found",id)) ;
+    public EmployeeNotFoundException(String userNotFound){
+        super(userNotFound) ;
     }
 }

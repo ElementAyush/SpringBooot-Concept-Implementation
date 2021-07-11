@@ -23,11 +23,11 @@ public class HandleEmployeeOperation {
         employeeData.add(employee) ;
     }
 
-    public Employee searchEmployeeById(long id){
+    public Employee searchEmployeeById(int id){
 
         return employeeData.stream().filter(x -> x.getId() == id)
                 .findFirst()
-                .orElseThrow(() -> new EmployeeNotFoundException(id)) ;
+                .orElseThrow(() -> new EmployeeNotFoundException(String.format("User with id %d not found",id))) ;
 
     }
 }

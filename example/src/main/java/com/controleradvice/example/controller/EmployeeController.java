@@ -35,7 +35,7 @@ public class EmployeeController {
 
     @GetMapping("/employee/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public Employee addEmployee(@PathVariable long id){
+    public Employee addEmployee(@PathVariable int id){
 
         return handleEmployeeOperation.searchEmployeeById(id);
     }
