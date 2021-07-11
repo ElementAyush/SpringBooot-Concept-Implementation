@@ -33,4 +33,11 @@ public class EmployeeController {
      return employeeData ;
     }
 
+    @GetMapping("/employee/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Employee addEmployee(@PathVariable long id){
+
+        return handleEmployeeOperation.searchEmployeeById(id);
+    }
+
 }

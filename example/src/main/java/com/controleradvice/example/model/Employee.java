@@ -1,13 +1,18 @@
 package com.controleradvice.example.model;
 
+import org.springframework.lang.NonNull;
+
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 
 public class Employee {
 
 
+    @NotEmpty
     @NotNull
-    long id ;
+    int id ;
+
     String name ;
     char[] password ;
 
@@ -21,7 +26,7 @@ public class Employee {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

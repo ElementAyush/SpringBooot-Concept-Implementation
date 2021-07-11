@@ -26,7 +26,8 @@ public class HandleEmployeeOperation {
     public Employee searchEmployeeById(long id){
 
         return employeeData.stream().filter(x -> x.getId() == id)
-                .findAny()
-                .get();
+                .findFirst()
+                .orElseThrow(() -> new EmployeeNotFoundException(id)) ;
+
     }
 }
