@@ -5,12 +5,14 @@ import com.controleradvice.example.services.HandleEmployeeOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@ControllerAdvice
+@Validated
 public class EmployeeController {
 
     @Autowired
@@ -25,7 +27,7 @@ public class EmployeeController {
 
     @PostMapping("/employee")
     @ResponseStatus(HttpStatus.CREATED)
-    public Employee addEmployee(@RequestBody Employee employeeData){
+    public Employee addEmployee(@Valid @RequestBody Employee employeeData){
 
         handleEmployeeOperation.addToemployeeData(employeeData) ;
      return employeeData ;

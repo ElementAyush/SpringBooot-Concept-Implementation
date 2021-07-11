@@ -1,10 +1,12 @@
 package com.controleradvice.example.model;
 
-import org.springframework.validation.annotation.Validated;
+import javax.validation.constraints.NotNull;
 
-@Validated
+
 public class Employee {
 
+
+    @NotNull
     Integer id ;
     String name ;
     char[] password ;
