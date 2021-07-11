@@ -13,13 +13,15 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import java.util.ArrayList;
 import java.util.List;
 
-//@ControllerAdvice
-//public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
-//    @Override
-//    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-//
-//        return new ResponseEntity<>(ex.getAllErrors(),status) ;
-//    }
-//
-//
-//}
+@ControllerAdvice
+public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+
+        return new ResponseEntity<>(ex.getAllErrors(),status) ;
+    }
+
+
+
+
+}

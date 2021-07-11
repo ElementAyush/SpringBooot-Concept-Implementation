@@ -1,5 +1,6 @@
 package com.controleradvice.example.services;
 
+import com.controleradvice.example.exception.EmployeeNotFoundException;
 import com.controleradvice.example.model.Employee;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +21,12 @@ public class HandleEmployeeOperation {
     public void addToemployeeData(Employee employee){
 
         employeeData.add(employee) ;
+    }
+
+    public Employee searchEmployeeById(long id){
+
+        return employeeData.stream().filter(x -> x.getId() == id)
+                .findAny()
+                .get();
     }
 }

@@ -7,7 +7,7 @@ public class Employee {
 
 
     @NotNull
-    Integer id ;
+    long id ;
     String name ;
     char[] password ;
 
@@ -17,7 +17,7 @@ public class Employee {
         this.password = password;
     }
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
